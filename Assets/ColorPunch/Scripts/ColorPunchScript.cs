@@ -19,7 +19,7 @@ public class ColorPunchScript : ModuleScript
     public KMSelectable[] Buttons;
     public TextMesh[] Texts;
 
-    private TextColor _solution;
+    internal TextColor solution;
 
     private void Start()
     {
@@ -27,6 +27,7 @@ public class ColorPunchScript : ModuleScript
             onNeedyDeactivation: OnNeedyDeactivation,
             onTimerExpired: () => delegate () 
             {
+                this.Log("Time expired. Strike.");
                 Needy.HandleStrike();
                 OnNeedyDeactivation().Invoke();
             },
@@ -41,14 +42,14 @@ public class ColorPunchScript : ModuleScript
         {
             var colors = new Stack<TextColor>(Helper.EnumAsArray<TextColor>().Shuffle());
 
-
             for (int i = 0; i < Texts.Length; i++)
             {
                 Texts[i].text = colors.Pop().ToString();
                 Texts[i].color = ToColor(colors.Pop());
             }
 
-            _solution = colors.Pop();
+            solution = colors.Pop();
+            this.Log("The current solution is {0}.".Form(solution));
         };
     }
 
@@ -74,12 +75,14 @@ public class ColorPunchScript : ModuleScript
 
         IsNeedyActive = false;
 
-        if ((TextColor)arg1 == _solution)
+        if ((TextColor)arg1 == solution)
         {
+            this.Log("Pressed the {0} button. Needy disarmed.".Form((TextColor)arg1));
             Needy.HandlePass();           
         }
         else
         {
+            this.Log("Pressed the {0} button. Strike.".Form((TextColor)arg1));
             Needy.HandleStrike();
         }
 
