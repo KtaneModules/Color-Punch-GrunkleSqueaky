@@ -21,6 +21,6 @@ MonoBehaviour:
 
 
     moduleId: ColorPunch'
-  version: 1
+  version: 1.11
   outputFolder: build
-  previewImage: {fileID: 0}
+  previewImage: {fileID: 2800000, guid: 4de15933325b8b046976847c0e7da512, type: 3}

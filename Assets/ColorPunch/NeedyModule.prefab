@@ -318,6 +318,7 @@ GameObject:
   - component: {fileID: 95933783140484352}
   - component: {fileID: 114107192107487212}
   - component: {fileID: 114268160826012022}
+  - component: {fileID: 114133794445683218}
   m_Layer: 0
   m_Name: NeedyModule
   m_TagString: Untagged
@@ -530,7 +531,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1860007381495826}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0.25, y: 0.52, z: 0}
+  m_LocalPosition: {x: 0.25, y: 0.53, z: 0}
   m_LocalScale: {x: 0.054999996, y: 0.15, z: 1.0000004}
   m_Children: []
   m_Father: {fileID: 4353823272391976}
@@ -556,7 +557,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1715837665191540}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.25, y: 0.52, z: 0}
+  m_LocalPosition: {x: -0.25, y: 0.53, z: 0}
   m_LocalScale: {x: 0.055, y: 0.15, z: 1}
   m_Children: []
   m_Father: {fileID: 4353823272391976}
@@ -1298,6 +1299,18 @@ MonoBehaviour:
   Texts:
   - {fileID: 102625098853817098}
   - {fileID: 102754516820173492}
+--- !u!114 &114133794445683218
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1958590392215658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36e5d9e6b13f474458ead591e46bc330, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Module: {fileID: 114107192107487212}
 --- !u!114 &114187678758232350
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1478,7 +1491,7 @@ MonoBehaviour:
   ModuleType: colorPunch
   ModuleDisplayName: Color Punch
   RequiresTimerVisibility: 0
-  WarnAtFiveSeconds: 0
+  WarnAtFiveSeconds: 1
 --- !u!114 &114592249468553640
 MonoBehaviour:
   m_ObjectHideFlags: 1
